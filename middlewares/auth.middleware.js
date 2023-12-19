@@ -48,7 +48,7 @@ const authMiddleware = async (req, res, next) => {
         return res.status(400).send({ msg: "Please Login !!" });
       }
 
-      jwt.verify(token, process.env.KEY, async (err, result) => {
+      jwt.verify(token, process.env.Key, async (err, result) => {
         try {
           if (result) {
             req.body.userId = result.userId;

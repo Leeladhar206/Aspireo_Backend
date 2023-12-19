@@ -178,7 +178,7 @@ userRouter.post("/login", async (req, res) => {
   try {
 
     if(email==='admin@gmail.com' && password==="admin"){
-      const token = jwt.sign({ userId: process.env.AdminId}, process.env.KEY, {
+      const token = jwt.sign({ userId: process.env.AdminId}, process.env.Key, {
         expiresIn: "1d",
       });
 
@@ -204,7 +204,7 @@ userRouter.post("/login", async (req, res) => {
         return res.status(200).send({ message: "Enter correct credentials" });
       }
 
-      const token = jwt.sign({ userId: existinguser._id }, process.env.KEY, {
+      const token = jwt.sign({ userId: existinguser._id }, process.env.Key, {
         expiresIn: "1d",
       });
 
